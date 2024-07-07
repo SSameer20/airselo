@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 // Routes
 app.get("/", (req, res) => {
-    res.status(201).send({msg : "Server is running"})
+    res.status(201).json({msg : "Server is running"})
 })
 
 app.get("/data", (req, res) => {
