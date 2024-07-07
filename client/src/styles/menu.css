@@ -1,0 +1,105 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap : 10vw;
+}
+
+.menu-area{
+    background-color: aliceblue;
+    height: 90vh;
+    max-width: 50vw;
+    min-width: 40vw;
+    overflow: scroll;
+}
+
+
+.menu-order{
+    background-color: aliceblue;
+    height: 40vh;
+    max-width: 30vw;
+    min-width: 20vw;
+
+}
+
+.menu-area .tags{
+    border-bottom: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.menu-area .tags button{
+    background-color: rgb(149, 150, 145);
+    color: aliceblue;
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+
+}
+
+.card-image{
+    padding: 20px;
+}
+
+.card-image .card-img{
+    max-width: 250px;
+    
+}
+
+.card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.card .details{
+    display: flex;
+    flex-direction: column;
+}
+
+.details .meal-details{
+    font-size: x-small;
+}
+
+.details .meal-title{
+    font-size: large;
+    font-weight: 700;
+}
+
+.food-details{
+    display: flex;
+    flex-direction: column;
+}   
+
+.food-details span{
+    font-size: small;
+}
+
+.card-bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drinks .drink img{
+    aspect-ratio: 1 / 1;
+    width: 50px;
+    margin: 5px;
+}
+
+.drinks .drink img:hover{
+    border: 1px solid black;
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
