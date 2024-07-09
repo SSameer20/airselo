@@ -7,9 +7,7 @@ import Juice from "../media/Juice.jpg";
 
 
 export default function Menu() {
-  const [label, setLabel] = useState(
-[]
-  );
+  const [label, setLabel] = useState([]);
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
   const [selectDrink, setSelectDrink] = useState(false)
@@ -48,6 +46,19 @@ export default function Menu() {
 
 const handleDrink = (e) => {
   console.log(e.target.getAttribute('value'));
+  if(e.target.getAttribute('flag') == "false"){
+    e.target.getAttribute('flag') = "true"
+
+  }
+  else{
+    e.target.getAttribute('flag') = "false"
+  }
+
+}
+
+const addItem = (cost) => {
+  // console.log(cost);
+  
 }
 
 
@@ -87,6 +98,7 @@ const handleDrink = (e) => {
                           src={drink.title === "Vine" ? Vine : drink.title === "Juice" ? Juice : Beer} 
                           alt={drink.title} 
                           value={drink.price}
+                          flag="false"
                           onClick={handleDrink}/>
                         })
 
@@ -97,7 +109,7 @@ const handleDrink = (e) => {
                     </div>
                     <div className="price">
                       <span>{item.price}</span>
-                      <button>Select</button>
+                      <button onClick={addItem(item.price)}>Select</button>
                     </div>
                   </div>
                 </div>

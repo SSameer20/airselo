@@ -41,6 +41,7 @@ const meal =  [
           "breakfast"
         ],
         "img": "https://static.independent.co.uk/2022/05/02/11/iStock-1044323290.jpg",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
@@ -97,6 +98,7 @@ const meal =  [
           "vegetarian"
         ],
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9GIpujRfpC8HWO4TPdlH0OA9SDCc2YxEPsPdh0N_YkIzXJh5AUHA3i0_RnJcBSttzaU&usqp=CAU",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
@@ -125,6 +127,7 @@ const meal =  [
           "seafood"
         ],
         "img": "https://www.foodandwine.com/thmb/ClPnka2WSnl5PtrMYOjlmXsXw1k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/escovitch-fish-FT-RECIPE0920-8a733638c2ba4b72b48737782fa616c2.jpg",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
@@ -153,6 +156,7 @@ const meal =  [
           "pork"
         ],
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX3vJZR5sZ1O6eOqEyyJBEWGbe-rTt2mcv-w&s",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
@@ -182,6 +186,7 @@ const meal =  [
           "breakfast"
         ],
         "img": "https://qph.cf2.quoracdn.net/main-qimg-c444274bc11709f89001de706002aaf7",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
@@ -210,6 +215,7 @@ const meal =  [
           "chicken"
         ],
         "img": "https://pataksusa.com/wp-content/uploads/2023/09/3-step-butter-chicken.jpg",
+        "drink_flag" : false,
         "drinks": [
           {
             "id": "drink-1",
