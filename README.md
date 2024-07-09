@@ -56,33 +56,33 @@ Clone the project
   cd client
 ```
 
-#### Install dependencies
+- #### Install dependencies
 
 ```bash
   npm install
 ```
 
-#### Start the Client
+- #### Start the Client
 
 ```bash
   npm run start
 ```
-#### Go to the Server
+#### Go to the Server in New Terminal
 ```bash
   cd server
 ```
 
-#### Install dependencies
+- #### Install dependencies
 
 ```bash
   npm install
 ```
 
-#### Start the Client
+- #### Start the Client
 
 ```bash
   npm start
-```
+ ```
 
 
 
