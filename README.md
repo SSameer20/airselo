@@ -39,7 +39,7 @@ Managing in-flight services, particularly food management, is a complex task tha
 
 ## Demo
 
-![UI](./designs/Home_Page_UI.png)
+![UI](./designs/home_page_ui.png)
 
 
 ## Run Locally
