@@ -39,7 +39,7 @@ Managing in-flight services, particularly food management, is a complex task tha
 
 ## Demo
 
-![UI](https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/05/online-learning.jpeg.jpg)
+![UI](./designs/Home_Page_UI.png)
 
 
 ## Run Locally
