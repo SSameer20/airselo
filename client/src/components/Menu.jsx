@@ -4,6 +4,7 @@ import "../styles/menu.css"
 import Vine from "../media/Vine.jpg";
 import Beer from "../media/Beer.jpg";
 import Juice from "../media/Juice.jpg";
+import Navigation from './Navigation';
 
 
 export default function Menu() {
@@ -46,13 +47,6 @@ export default function Menu() {
 
 const handleDrink = (e) => {
   console.log(e.target.getAttribute('value'));
-  if(e.target.getAttribute('flag') == "false"){
-    e.target.getAttribute('flag') = "true"
-
-  }
-  else{
-    e.target.getAttribute('flag') = "false"
-  }
 
 }
 
@@ -63,6 +57,8 @@ const addItem = (cost) => {
 
 
   return (
+    <>
+      <Navigation />
     <div className="menu">
       <div className="menu-area">
         <div className="tags">
@@ -70,7 +66,7 @@ const addItem = (cost) => {
           {
             label.map((item) => {
               return <button onClick={handleFilter} value={item.id}>{item.label}</button>
-
+              
             })
 
           }
@@ -129,5 +125,6 @@ const addItem = (cost) => {
 
       </div>
     </div>
+</>
   )
 }
