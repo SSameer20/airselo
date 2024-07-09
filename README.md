@@ -1,6 +1,4 @@
 <img src="./assets/banner.png" style="width: 100%; border: 1px solid white; border-radius: 100px;" />
-<<<<<<< HEAD
-
 
 ## Airselo - Aeroplane Food Management System
 Managing in-flight services, particularly food management, is a complex task that requires careful planning and execution. Airselo is an Aeroplane Food Management System designed to streamline and automate the process of managing food services on flights.
@@ -13,10 +11,6 @@ Managing in-flight services, particularly food management, is a complex task tha
 **Server:** Node, Express, MongoDB
 
 ## Package
-=======
-## About Airselo
->>>>>>> daed76907089e48792696654dbcf1a507d1e78d6
-
 | Package | Version |
 | --- | ----------- |
 | [React](https://www.npmjs.com/package/react) | 18.3.1 |
@@ -31,9 +25,6 @@ Managing in-flight services, particularly food management, is a complex task tha
 | [cors](https://www.npmjs.com/package/cors) | 2.8.5 |
 | [body-parser](https://www.npmjs.com/package/body-parser) | 1.20.2 |
 | [nodemon](https://www.npmjs.com/package/nodemon) | 3.1.4 |
-<<<<<<< HEAD
-
-
 
 ## Documentation
 
@@ -44,8 +35,6 @@ Managing in-flight services, particularly food management, is a complex task tha
 [Pull Request Template](./PR_TEMPLATE.md)
 
 [Issue Template](./ISSUE_TEMPLATE.md)
-
-
 
 
 ## Demo
@@ -101,7 +90,7 @@ Clone the project
 
 #### Get all items
 
-```http
+```bash
   GET /api/data
 ```
 
@@ -118,6 +107,3 @@ Clone the project
 
 - [@sameer](https://github.com/SSameer20)
 
-
-=======
->>>>>>> daed76907089e48792696654dbcf1a507d1e78d6
