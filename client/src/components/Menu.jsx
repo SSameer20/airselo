@@ -12,6 +12,8 @@ export default function Menu() {
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
   const [selectDrink, setSelectDrink] = useState(false)
+  const [selectedDrinks, setSelectedDrinks] = useState({});
+  const [totalPrice, setTotalPrice] = useState(0);
 
 
   const fetchHandler = async () => {
@@ -94,7 +96,6 @@ const addItem = (cost) => {
                           src={drink.title === "Vine" ? Vine : drink.title === "Juice" ? Juice : Beer} 
                           alt={drink.title} 
                           value={drink.price}
-                          flag="false"
                           onClick={handleDrink}/>
                         })
 
@@ -122,6 +123,7 @@ const addItem = (cost) => {
 
       </div>
       <div className="menu-order">
+        
 
       </div>
     </div>
