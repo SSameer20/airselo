@@ -11,7 +11,7 @@ export default function Menu() {
   const [label, setLabel] = useState([]);
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
-  const [selectDrink, setSelectDrink] = useState(false)
+  // const [selectDrink, setSelectDrink] = useState(false)
   const [selectedDrinks, setSelectedDrinks] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -85,7 +85,7 @@ const addItem = (cost) => {
                   <div className="food-details">
                     <span><strong>Starter: </strong>{item.starter}</span>
                     <span><strong>Desert: </strong>{item.desert}</span>
-                    {selectDrink ? (<span><strong>Selected drink: </strong> Orange Juice</span>) : (<span></span>)}
+                    {/* {selectDrink ? (<span><strong>Selected drink: </strong> Orange Juice</span>) : (<span></span>)} */}
                   </div>
                   <div className="card-bottom">
                     <div className="drinks">

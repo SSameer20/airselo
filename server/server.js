@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const {meal , label} = require("./data")
+const {meal , label} = require("./data/data")
 
 // app
 const app = express();
