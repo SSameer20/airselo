@@ -105,5 +105,6 @@ Clone the project
 
 ## Authors
 
-- [@sameer](https://github.com/SSameer20)
+- [@sameer - Github](https://github.com/SSameer20)
+- [@sameer - LinkedIn](https://www.linkedin.com/in/20-sameershaik/)
 
