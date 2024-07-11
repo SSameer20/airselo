@@ -54,9 +54,8 @@ const navigate = useNavigate();
 
  
 
+  // Menu Item - ADD
 
-
-  // Filter 
   const addItem = (item) => {
    const findItem = order.find((food) => food.id === item.id && food.title === item.title)
     // console.log(findItem)
@@ -69,6 +68,8 @@ const navigate = useNavigate();
     }
   }
 
+    // Menu Item - DELETE
+
   const deleteItem = (item) => {
     setOrder(order.filter((menu) => menu.id !== item.id))
     const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0);
@@ -76,10 +77,11 @@ const navigate = useNavigate();
       setPrice(newPrice);
     } catch (error) {
       setPrice(0);
-
     }
 
   }
+
+    // Drink Item - ADD
 
 
   const handleDrink = (item, menu) => {
@@ -87,20 +89,23 @@ const navigate = useNavigate();
     const findDrink = drink.find((food) => food.id === item.id && food.menu === menu.id )
     if(!findDrink){
       const newDrink = {id : item.id, title : item.title, menu : menu.id, price : item.price};
-      console.log(newDrink)
+      // console.log(newDrink)
       setDrink([...drink, newDrink])
       setPrice(prev => prev + item.price)
     }   
   }
 
+     // Drink Item - DELETE
 
   const deleteDrink = (item) => {
-    setDrink(drink.filter((drinkItem) => drinkItem.id !== item.id && drinkItem.menu !== item.menu))
+
+    const findElement = drink.find((food) => food.id === item.id && food.menu === item.menu)
+    setDrink(drink.filter((drinkItem) => drinkItem !== findElement))
     const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0);
    setPrice(newPrice)
   }
 
-  //deleteDrink
+  
 
 
   return (
