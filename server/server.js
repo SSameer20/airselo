@@ -20,6 +20,6 @@ app.get("/data", (req, res) => {
 
 
 /// listen
-app.listen(3001, (req, res) => {
+app.listen(3001, () => {
     console.log(`The server is running on http://localhost:3001`)
 })
