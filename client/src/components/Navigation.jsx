@@ -13,9 +13,9 @@ export default function Navigation() {
         <li>
           <Link to="/menu">Menu</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/about">about</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )

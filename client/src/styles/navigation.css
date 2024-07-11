@@ -1,6 +1,8 @@
 .navigation{
     display: flex;
+    height: 10vh;
     justify-content: space-around;
+    align-items: center;
     color: aliceblue;
     background-color: #1A2130;
 }

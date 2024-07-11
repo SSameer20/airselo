@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+// import Alert from '@mui/material/Alert';
 import axios from 'axios';
 import "../styles/menu.css"
 import Vine from "../media/Vine.jpg";
@@ -8,6 +10,7 @@ import Navigation from './Navigation';
 
 
 export default function Menu() {
+const navigate = useNavigate();
  const [label, setLabel] = useState([]);
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
@@ -15,7 +18,13 @@ export default function Menu() {
   const [drink, setDrink] = useState([])
   const [order, setOrder] = useState([])
 
+  const handleOrder = () =>{
+    if(order.length === 0 && drink.length === 0){
+      return alert("")
+       
+    }
 
+  }
 
   const fetchHandler = async () => {
     await axios.get("http://localhost:3001/data")
@@ -43,15 +52,17 @@ export default function Menu() {
     fetchHandler();
   }, []);
 
+ 
+
 
 
   // Filter 
   const addItem = (item) => {
-   const findItem = order.find((food) => food.id === item.id)
-    console.log(findItem)
+   const findItem = order.find((food) => food.id === item.id && food.title === item.title)
+    // console.log(findItem)
 
     if(!findItem) {
-      const newItem = { id: item.id, price: Math.round(item.price * 100) / 100 }
+      const newItem = { id: item.id, title : item.title, price: Math.round(item.price * 100) / 100 }
     
     setOrder([...order, newItem])
     setPrice(price + Math.round(item.price * 100) / 100)
@@ -71,29 +82,22 @@ export default function Menu() {
   }
 
 
-  const handleDrink = (item, menuId) => {
+  const handleDrink = (item, menu) => {
 
-    const findDrink = drink.find((food) => food.id === item.id )
+    const findDrink = drink.find((food) => food.id === item.id && food.menu === menu.id )
     if(!findDrink){
-      const newDrink = {id : item.id, title : item.title, menu : menuId, price : item.price};
+      const newDrink = {id : item.id, title : item.title, menu : menu.id, price : item.price};
+      console.log(newDrink)
       setDrink([...drink, newDrink])
       setPrice(prev => prev + item.price)
-
     }   
-
   }
 
 
   const deleteDrink = (item) => {
-    setDrink(drink.filter((drinkItem) => drinkItem.id !== item.id))
+    setDrink(drink.filter((drinkItem) => drinkItem.id !== item.id && drinkItem.menu !== item.menu))
     const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0);
-    try {
-      setPrice(newPrice);
-    } catch (error) {
-      setPrice(0);
-
-    }
-
+   setPrice(newPrice)
   }
 
   //deleteDrink
@@ -126,7 +130,14 @@ export default function Menu() {
                     <div className="food-details">
                       <span><strong>Starter: </strong>{item.starter}</span>
                       <span><strong>Desert: </strong>{item.desert}</span>
-                      {drink ? (<span><strong>Selected drink: </strong> Orange Juice</span>) : (<span></span>)}
+                      {drink ? (<span><strong>Selected drink:</strong>
+                      {
+                        drink.map((it) => {
+                          if(it.menu === item.id){
+                            return <span> {it.title} </span>
+                          }
+                        })
+                      }</span>) : (<span></span>)}
                     </div>
                     <div className="card-bottom">
                       <div className="drinks">
@@ -137,7 +148,8 @@ export default function Menu() {
                                 src={drink.title === "Vine" ? Vine : drink.title === "Juice" ? Juice : Beer}
                                 alt={drink.title}
                                 value={drink.price}
-                                onClick={() => handleDrink(drink, item.id)} />
+                                id={item.id}
+                                onClick={() => handleDrink(drink, item)} />
                             })
 
                           }
@@ -170,7 +182,7 @@ export default function Menu() {
             <summary>Items Ordered</summary>
             {order.map(item => (
               <span key={item.id}>
-                {item.id} - $ {item.price}
+                {item.title} - $ {item.price}
                 <button onClick={() => deleteItem(item)}>x</button>
               </span>
             ))}
@@ -181,14 +193,14 @@ export default function Menu() {
             <summary>Drinks Ordered</summary>
             {drink.map(item => (
               <span key={item.id}>
-                {item.id} -  {item.price} $
+                {item.title} -  {item.price} $
                 <button onClick={() => deleteDrink(item)}>Delete</button>
               </span>
             ))}
 
           </details>
           <p>Total Bill : &#36; { Math.round(price * 100) / 100}</p>
-          <button>Order</button>
+          <button id='order-btn' onClick={handleOrder}>Order</button>
 
         </div>
       </div>

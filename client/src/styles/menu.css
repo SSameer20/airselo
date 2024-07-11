@@ -2,24 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    gap : 10vw;
+    gap : 5vw;
     margin-top: 30px;
 }
 
 .menu-area{
     background-color: aliceblue;
     height: 88vh;
-    max-width: 50vw;
-    min-width: 40vw;
-    /* overflow: scroll; */
+    max-width: 70vw;
+    min-width: 60vw;
 }
+
 .order-cards{
     overflow: scroll;
     height: 82vh;
 }
-
-
-
 
 .menu-area .tags{
     border-bottom: solid 1px black;
@@ -121,6 +118,7 @@
     max-width: 30vw;
     min-width: 20vw;
     padding: 10px 20px;
+    overflow: scroll;
 
 }
 
@@ -132,6 +130,27 @@
     gap: 10px;
     padding: 0 10px;
     transition: 0.4s;
+    margin: 10px 0;
+}
+
+
+
+#order-btn{
+    padding: 5px 10px;
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.menu-order details button{
+    padding: 5px 10px;
+    background-color: rgb(230, 114, 114);
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+
 }
 
 
