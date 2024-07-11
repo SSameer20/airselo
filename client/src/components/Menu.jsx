@@ -12,7 +12,7 @@ export default function Menu() {
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
   const [price, setPrice] = useState(0);
-  const [selectDrink, setSelectDrink] = useState(false)
+  const [drink, setDrink] = useState([])
   const [order, setOrder] = useState([])
 
 
@@ -27,50 +27,76 @@ export default function Menu() {
       .catch((err) => alert("Error While Connecting to Server " + err))
   }
 
-  //  Calling the Fetch
+
 
   const handleFilter = (e) => {
     const item = e.target.value;
-    if (item !== "") {
-      setMeal(data)
+    if (item !== '') {
       const filter = data.filter((food) => food.labels.includes(item));
-      setMeal(filter)
-    }
-    else {
+      setMeal(filter);
+    } else {
       setMeal(data);
     }
-  }
+  };
+
   useEffect(() => {
     fetchHandler();
-  }, [handleFilter])
+  }, []);
+
 
 
   // Filter 
-
-
-  const handleDrink = (e) => {
-    console.log(e.target.getAttribute('value'));
-
-  }
-
   const addItem = (item) => {
-    console.log(item)
-    const newItem = { id: item.id, price: Math.round(item.price * 100) / 100 }
+   const findItem = order.find((food) => food.id === item.id)
+    console.log(findItem)
+
+    if(!findItem) {
+      const newItem = { id: item.id, price: Math.round(item.price * 100) / 100 }
+    
     setOrder([...order, newItem])
-    setPrice( price +  Math.round(item.price * 100) / 100 )
+    setPrice(price + Math.round(item.price * 100) / 100)
+    }
   }
 
   const deleteItem = (item) => {
     setOrder(order.filter((menu) => menu.id !== item.id))
-    const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0); 
+    const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0);
     try {
       setPrice(newPrice);
     } catch (error) {
       setPrice(0);
-      
+
     }
-    
+
   }
+
+
+  const handleDrink = (item, menuId) => {
+
+    const findDrink = drink.find((food) => food.id === item.id )
+    if(!findDrink){
+      const newDrink = {id : item.id, title : item.title, menu : menuId, price : item.price};
+      setDrink([...drink, newDrink])
+      setPrice(prev => prev + item.price)
+
+    }   
+
+  }
+
+
+  const deleteDrink = (item) => {
+    setDrink(drink.filter((drinkItem) => drinkItem.id !== item.id))
+    const newPrice = Math.max(price - Math.round(item.price * 100) / 100, 0);
+    try {
+      setPrice(newPrice);
+    } catch (error) {
+      setPrice(0);
+
+    }
+
+  }
+
+  //deleteDrink
 
 
   return (
@@ -100,7 +126,7 @@ export default function Menu() {
                     <div className="food-details">
                       <span><strong>Starter: </strong>{item.starter}</span>
                       <span><strong>Desert: </strong>{item.desert}</span>
-                      {selectDrink ? (<span><strong>Selected drink: </strong> Orange Juice</span>) : (<span></span>)}
+                      {drink ? (<span><strong>Selected drink: </strong> Orange Juice</span>) : (<span></span>)}
                     </div>
                     <div className="card-bottom">
                       <div className="drinks">
@@ -111,7 +137,7 @@ export default function Menu() {
                                 src={drink.title === "Vine" ? Vine : drink.title === "Juice" ? Juice : Beer}
                                 alt={drink.title}
                                 value={drink.price}
-                                onClick={handleDrink} />
+                                onClick={() => handleDrink(drink, item.id)} />
                             })
 
                           }
@@ -120,10 +146,11 @@ export default function Menu() {
                         </div>
                       </div>
                       <div className="price">
-                        <span>{item.price}</span>
-                        <button onClick={() => addItem(item)}>Select</button>
+                        <span>&#36; {item.price}</span>
+                        
                       </div>
                     </div>
+                      <button onClick={() => addItem(item)}>Add Item</button>
                   </div>
 
                 </div>
@@ -152,15 +179,16 @@ export default function Menu() {
 
           <details className='bill-drinks'>
             <summary>Drinks Ordered</summary>
-            {order.map(item => (
+            {drink.map(item => (
               <span key={item.id}>
                 {item.id} -  {item.price} $
-                <button onClick={() => deleteItem(item.id)}>Delete</button>
+                <button onClick={() => deleteDrink(item)}>Delete</button>
               </span>
             ))}
 
           </details>
-          <p>Total Bill : {price}</p>
+          <p>Total Bill : &#36; { Math.round(price * 100) / 100}</p>
+          <button>Order</button>
 
         </div>
       </div>
