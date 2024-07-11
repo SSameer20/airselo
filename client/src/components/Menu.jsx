@@ -8,14 +8,13 @@ import Navigation from './Navigation';
 
 
 export default function Menu() {
-  const [label, setLabel] = useState([]);
+ const [label, setLabel] = useState([]);
   const [data, setData] = useState([])
   const [meal, setMeal] = useState([]);
   const [price, setPrice] = useState(0);
   const [selectDrink, setSelectDrink] = useState(false)
-  const [order, setOrder] = useState([
-    
-  ])
+  const [order, setOrder] = useState([])
+
 
 
   const fetchHandler = async () => {
@@ -75,7 +74,7 @@ export default function Menu() {
 
 
   return (
-    <>
+   <>
       <Navigation />
       <div className="menu">
         <div className="menu-area">
@@ -166,5 +165,6 @@ export default function Menu() {
         </div>
       </div>
     </>
+
   )
 }

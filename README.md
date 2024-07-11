@@ -39,7 +39,7 @@ Managing in-flight services, particularly food management, is a complex task tha
 
 ## Demo
 
-![UI](https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/05/online-learning.jpeg.jpg)
+![UI](./designs/home_page_ui.png)
 
 
 ## Run Locally
@@ -56,33 +56,33 @@ Clone the project
   cd client
 ```
 
-#### Install dependencies
+- #### Install dependencies
 
 ```bash
   npm install
 ```
 
-#### Start the Client
+- #### Start the Client
 
 ```bash
   npm run start
 ```
-#### Go to the Server
+#### Go to the Server in New Terminal
 ```bash
   cd server
 ```
 
-#### Install dependencies
+- #### Install dependencies
 
 ```bash
   npm install
 ```
 
-#### Start the Client
+- #### Start the Client
 
 ```bash
   npm start
-```
+ ```
 
 
 
@@ -105,5 +105,6 @@ Clone the project
 
 ## Authors
 
-- [@sameer](https://github.com/SSameer20)
+- [@sameer - Github](https://github.com/SSameer20)
+- [@sameer - LinkedIn](https://www.linkedin.com/in/20-sameershaik/)
 
