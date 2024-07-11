@@ -1,4 +1,4 @@
-[Airselo](./assets/banner.gif)
+![Airselo](./assets/banner.gif)
 
 ## Airselo - Aeroplane Food Management System
 Managing in-flight services, particularly food management, is a complex task that requires careful planning and execution. Airselo is an Aeroplane Food Management System designed to streamline and automate the process of managing food services on flights.
