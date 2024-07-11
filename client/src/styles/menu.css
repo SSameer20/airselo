@@ -19,13 +19,7 @@
 }
 
 
-.menu-order{
-    background-color: aliceblue;
-    height: 40vh;
-    max-width: 30vw;
-    min-width: 20vw;
 
-}
 
 .menu-area .tags{
     border-bottom: solid 1px black;
@@ -108,3 +102,24 @@
     transition: 0.4s;
 }
 
+
+/* Bill Section */
+.menu-order{
+    background-color: aliceblue;
+    min-height: 20vh;
+    max-height: 80vh;
+    max-width: 30vw;
+    min-width: 20vw;
+    padding: 10px 20px;
+
+}
+
+
+.bill-items span, .bill-drinks span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    transition: 0.4s;
+}
